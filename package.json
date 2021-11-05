@@ -1,0 +1,48 @@
+{
+  "name": "boilerplate-node",
+  "version": "0.1.0",
+  "description": "A bare bones boilerplate project for Node.js apps and NPM modules.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run build && NODE_TLS_REJECT_UNAUTHORIZED='0' node dist/",
+    "build": "babel src/ -d dist/",
+    "watch": "nodemon src/index.js --ignore dist/ --exec babel-node",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "clean": "rm -rf ./dist",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samuele-artuso/boilerplate-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samuele-artuso/boilerplate-node/issues"
+  },
+  "keywords": [
+    "node.js",
+    "boilerplate"
+  ],
+  "author": "Sam Artuso <sam@highoctanedev.co.uk>",
+  "license": "MIT",
+  "directories": {
+    "bin": "./bin",
+    "lib": "./src/lib",
+    "test": "./test"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-root-import": "^5.1.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.5.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.5.0",
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
